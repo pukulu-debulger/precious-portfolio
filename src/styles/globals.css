@@ -1223,6 +1223,29 @@ textarea {
   color: rgb(255 255 255 / 92%);
 }
 
+.portfolio-work-card {
+  background: #f4f4f4;
+}
+
+.portfolio-work-card::before {
+  display: none;
+}
+
+.portfolio-work-card .portfolio-card-screen {
+  min-height: 116px;
+  overflow: hidden;
+}
+
+.portfolio-work-image {
+  object-fit: cover;
+  object-position: center;
+  transition: transform 180ms ease;
+}
+
+.portfolio-work-card:hover .portfolio-work-image {
+  transform: scale(1.04);
+}
+
 .portfolio-card-screen span {
   position: absolute;
   right: 14px;
