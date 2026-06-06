@@ -5,16 +5,10 @@ import {
   Briefcase,
   FileText,
   Home,
-  ImageIcon,
-  Laptop,
   Mail,
   Megaphone,
   MessageSquare,
-  MonitorSmartphone,
-  Palette,
-  PanelTop,
   Send,
-  Smartphone,
   User,
 } from "lucide-react";
 
@@ -29,27 +23,41 @@ const navLinks = [
 
 const railIcons = [Home, User, Briefcase, MessageSquare, Megaphone, Send];
 
-const filters = ["All", "Print Design", "Web Design", "Photography"];
+const filters = ["All", "Graphic Designing", "Web Design"];
 
 const projects = [
-  { title: "Brand Poster", type: "print design", icon: Palette, tone: "gold" },
-  { title: "School Portal", type: "web design", icon: Laptop, tone: "blue" },
-  { title: "Campaign Layout", type: "print design", icon: PanelTop, tone: "dark" },
-  { title: "Landing Page", type: "web design", icon: MonitorSmartphone, tone: "light" },
-  { title: "Dashboard UI", type: "web design", icon: MonitorSmartphone, tone: "slate" },
-  { title: "Portrait Edit", type: "photography", icon: ImageIcon, tone: "portrait" },
-  { title: "Social Kit", type: "print design", icon: PanelTop, tone: "cyan" },
-  { title: "Photo Story", type: "photography", icon: ImageIcon, tone: "field" },
-  { title: "Creative Shot", type: "photography", icon: ImageIcon, tone: "photo" },
-  { title: "Flyer Set", type: "print design", icon: Palette, tone: "paper" },
-  { title: "Portfolio Site", type: "web design", icon: Laptop, tone: "mono" },
-  { title: "Infographic", type: "print design", icon: Smartphone, tone: "mint" },
+  {
+    title: "Academy Fellowship",
+    type: "graphic designing",
+    src: "/images/academy felloship camerron.jpg",
+  },
+  { title: "Ausmacks", type: "graphic designing", src: "/images/AUSMACKS 2.jpg" },
+  { title: "Burger Flyer", type: "graphic designing", src: "/images/burger flyer.jpg" },
+  {
+    title: "CCAPSO Poster",
+    type: "graphic designing",
+    src: "/images/ccapso poster redesigned.jpg",
+  },
+  {
+    title: "CCAPSO Unima",
+    type: "graphic designing",
+    src: "/images/ccapso unima redesign.jpg",
+  },
+  { title: "Love Design", type: "graphic designing", src: "/images/love.jpg" },
+  { title: "Mwanja Nails", type: "graphic designing", src: "/images/MWANJA NAILS 2.jpg" },
+  { title: "Pukulu Works", type: "graphic designing", src: "/images/pukulu works.jpg" },
+  {
+    title: "Racheal Birthday",
+    type: "graphic designing",
+    src: "/images/RACHEAL BIRTHDAY.jpg",
+  },
+  { title: "Unima GLF Club", type: "graphic designing", src: "/images/unima glf club 1.jpg" },
 ];
 
 export const metadata: Metadata = {
   title: "Portfolio",
   description:
-    "Portfolio projects by Precious Pukulu across print design, web design, and photography.",
+    "Portfolio projects by Precious Pukulu across graphic designing and web design.",
 };
 
 export default function PortfolioPage() {
@@ -98,32 +106,30 @@ export default function PortfolioPage() {
 
         <div className="portfolio-filters" aria-label="Portfolio categories">
           {filters.map((filter, index) => (
-            <span className={index === 0 ? "is-active" : ""} key={filter}>
+            <span className={index === 1 ? "is-active" : ""} key={filter}>
               {filter}
             </span>
           ))}
         </div>
 
         <div className="portfolio-grid">
-          {projects.map((project) => {
-            const Icon = project.icon;
-
-            return (
-              <article
-                className={`portfolio-card portfolio-card-${project.tone}`}
-                key={project.title}
-              >
-                <div className="portfolio-card-screen">
-                  <Icon size={34} strokeWidth={1.7} aria-hidden />
-                  <span />
-                </div>
-                <div className="portfolio-card-copy">
-                  <strong>{project.title}</strong>
-                  <small>{project.type}</small>
-                </div>
-              </article>
-            );
-          })}
+          {projects.map((project) => (
+            <article className="portfolio-card portfolio-work-card" key={project.title}>
+              <div className="portfolio-card-screen">
+                <Image
+                  src={project.src}
+                  alt={project.title}
+                  fill
+                  sizes="(max-width: 760px) 50vw, (max-width: 1100px) 30vw, 190px"
+                  className="portfolio-work-image"
+                />
+              </div>
+              <div className="portfolio-card-copy">
+                <strong>{project.title}</strong>
+                <small>{project.type}</small>
+              </div>
+            </article>
+          ))}
         </div>
 
         <div className="portfolio-page-rail" aria-hidden>
