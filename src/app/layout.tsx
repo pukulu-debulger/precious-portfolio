@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Bebas_Neue, DM_Sans } from "next/font/google";
-import Sidebar from "@/components/Sidebar";
-import SocialIcons from "@/components/SocialIcons";
+import AppChrome from "@/components/AppChrome";
 import "@/styles/globals.css";
 
 const bebasNeue = Bebas_Neue({
@@ -37,8 +36,7 @@ export default function RootLayout({
       className={`${bebasNeue.variable} ${dmSans.variable} h-full antialiased`}
     >
       <body className="min-h-full">
-        <Sidebar />
-        <SocialIcons />
+        <AppChrome />
         <main className="site-shell">{children}</main>
       </body>
     </html>
