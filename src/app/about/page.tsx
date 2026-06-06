@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   Briefcase,
-  Camera,
   Code2,
   FileText,
   Home,
@@ -40,15 +39,15 @@ const services = [
     icon: Palette,
   },
   {
-    title: "Photography",
+    title: "Graphic Designer",
     description:
       "Creating polished visual content for personal brands, campaigns, and digital storytelling.",
-    icon: Camera,
+    icon: Palette,
   },
 ];
 
 const facts = [
-  { value: "5+", label: "Years Teaching" },
+  { value: "1", label: "Year Teaching" },
   { value: "25+", label: "Projects Done" },
   { value: "10+", label: "Design Brands" },
   { value: "100+", label: "Happy Students" },
