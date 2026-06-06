@@ -433,9 +433,9 @@ textarea {
 
 .about-template {
   display: grid;
-  width: min(100%, 1180px);
-  min-height: min(620px, calc(100vh - 76px));
-  grid-template-columns: 204px minmax(0, 1fr);
+  width: min(100%, 1280px);
+  min-height: min(700px, calc(100vh - 56px));
+  grid-template-columns: 224px minmax(0, 1fr);
   overflow: hidden;
   background: #dedede;
   box-shadow: 0 18px 26px rgb(0 0 0 / 36%);
@@ -443,7 +443,7 @@ textarea {
 
 .about-template-sidebar {
   display: grid;
-  grid-template-rows: 214px 1fr;
+  grid-template-rows: 238px 1fr;
   background: var(--gold);
 }
 
@@ -455,7 +455,7 @@ textarea {
 
 .about-template-photo {
   position: relative;
-  width: 152px;
+  width: 172px;
   aspect-ratio: 1;
   overflow: hidden;
   border: 5px solid var(--white);
@@ -526,7 +526,7 @@ textarea {
 .about-stage {
   position: relative;
   min-width: 0;
-  padding: 78px 108px 58px 88px;
+  padding: 88px 124px 68px 102px;
   background: #dedede;
 }
 
