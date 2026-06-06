@@ -35,11 +35,11 @@ export default function Sidebar() {
         <div className="sidebar-profile">
           <div className="sidebar-photo">
             <Image
-              src="/images/profile-reference.jpg"
+              src="/images/profile-photo.jpeg"
               alt="Precious Pukulu profile"
               fill
               sizes="112px"
-              className="object-cover"
+              className="sidebar-image"
               priority
             />
           </div>

@@ -3,9 +3,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, MapPin, Sparkles } from "lucide-react";
+import {
+  Briefcase,
+  Home,
+  Megaphone,
+  MessageSquare,
+  Send,
+  User,
+} from "lucide-react";
 
-const roles = ["Computer Science Teacher", "Software Developer", "Graphic Designer"];
+const heroIcons = [Home, User, Briefcase, MessageSquare, Megaphone, Send];
 
 export default function HomeHero() {
   return (
@@ -23,23 +30,15 @@ export default function HomeHero() {
         <h1 id="home-title" className="home-title">
           I&apos;M <span>Precious</span>
         </h1>
-        <div className="role-badges" aria-label="Professional roles">
-          {roles.map((role) => (
-            <span key={role}>{role}</span>
-          ))}
-        </div>
-        <p className="home-location">
-          <MapPin size={16} aria-hidden />
-          Malawi
+        <p className="role-badge role-badge-gold">
+          Computer Science Teacher / Software Developer
         </p>
+        <p className="role-badge role-badge-dark">Graphic Designer from Malawi</p>
         <p className="home-intro">
-          I build thoughtful learning experiences, polished digital products,
-          and clean visual systems for people who care about craft.
+          I create thoughtful learning experiences, clean software interfaces,
+          and polished visual designs for people who care about craft.
         </p>
-        <Link href="/about" className="cta-button">
-          More About Me
-          <ArrowRight size={17} aria-hidden />
-        </Link>
+        <Link href="/about" className="cta-button">More About Me</Link>
       </motion.div>
 
       <motion.div
@@ -52,18 +51,23 @@ export default function HomeHero() {
         <div className="orbit orbit-bottom" aria-hidden />
         <div className="portrait-ring">
           <Image
-            src="/images/profile-reference.jpg"
+            src="/images/profile-photo.jpeg"
             alt="Precious Pukulu portrait"
             fill
-            sizes="(max-width: 768px) 68vw, 360px"
-            className="object-cover"
+            sizes="(max-width: 768px) 68vw, 340px"
+            className="portrait-image"
             priority
           />
         </div>
-        <span className="spark-point spark-one" aria-hidden>
-          <Sparkles size={18} />
-        </span>
-        <span className="spark-point spark-two" aria-hidden />
+        <div className="hero-icon-rail" aria-label="Portfolio navigation shortcuts">
+          {heroIcons.map((Icon, index) => (
+            <span key={index} className={`hero-icon hero-icon-${index + 1}`}>
+              <Icon size={15} aria-hidden />
+            </span>
+          ))}
+        </div>
+        <span className="orbit-dot orbit-dot-top" aria-hidden />
+        <span className="orbit-dot orbit-dot-bottom" aria-hidden />
       </motion.div>
     </section>
   );
