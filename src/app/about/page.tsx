@@ -72,7 +72,7 @@ export default function AboutPage() {
               src="/images/profile-photo.jpeg"
               alt="Precious Pukulu profile"
               fill
-              sizes="152px"
+              sizes="500px"
               className="about-template-image"
               priority
             />
