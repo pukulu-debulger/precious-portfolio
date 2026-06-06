@@ -97,7 +97,9 @@ textarea {
 
 .sidebar-image {
   object-fit: cover;
-  object-position: 50% 24%;
+  object-position: 49% 22%;
+  transform: scale(1.72) rotate(1.2deg);
+  transform-origin: 49% 28%;
 }
 
 .sidebar-name {
@@ -326,7 +328,9 @@ textarea {
 
 .portrait-image {
   object-fit: cover;
-  object-position: 50% 24%;
+  object-position: 49% 22%;
+  transform: scale(1.72) rotate(1.2deg);
+  transform-origin: 49% 28%;
 }
 
 .orbit {
