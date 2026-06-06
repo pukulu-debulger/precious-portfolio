@@ -7,7 +7,7 @@ import SocialIcons from "@/components/SocialIcons";
 export default function AppChrome() {
   const pathname = usePathname();
 
-  if (pathname === "/") {
+  if (pathname === "/" || pathname === "/about") {
     return null;
   }
 
