@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
+import Sidebar from "../../components/Sidebar";
 import {
   Award,
   BookOpen,
@@ -15,15 +14,6 @@ import {
   Send,
   User,
 } from "lucide-react";
-
-const navLinks = [
-  { href: "/", label: "Home", icon: Home },
-  { href: "/about", label: "About Me", icon: User },
-  { href: "/resume", label: "Resume", icon: FileText },
-  { href: "/portfolio", label: "Portfolio", icon: Briefcase },
-  { href: "/testimonials", label: "Testimonials", icon: MessageSquare },
-  { href: "/contact", label: "Contact", icon: Mail },
-];
 
 const railIcons = [Home, User, FileText, Briefcase, MessageSquare, Send];
 
@@ -72,38 +62,7 @@ export const metadata: Metadata = {
 export default function ResumePage() {
   return (
     <section className="resume-template" aria-labelledby="resume-title">
-      <aside className="resume-template-sidebar" aria-label="Resume navigation">
-        <div className="resume-template-profile">
-          <div className="resume-template-photo">
-            <Image
-              src="/images/profile-photo.jpeg"
-              alt="Precious Pukulu profile"
-              fill
-              sizes="500px"
-              className="resume-template-image"
-              priority
-            />
-          </div>
-        </div>
-
-        <nav className="resume-template-nav">
-          {navLinks.map((link) => {
-            const Icon = link.icon;
-            const isActive = link.href === "/resume";
-
-            return (
-              <Link
-                href={link.href}
-                className={`resume-template-link ${isActive ? "is-active" : ""}`}
-                key={link.href}
-              >
-                <Icon size={15} aria-hidden />
-                <span>{link.label}</span>
-              </Link>
-            );
-          })}
-        </nav>
-      </aside>
+      <Sidebar />
 
       <div className="resume-stage">
         <div className="resume-heading-row">
