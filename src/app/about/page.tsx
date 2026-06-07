@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
+import Sidebar from "../../components/Sidebar";
 import {
   Briefcase,
   Code2,
@@ -13,15 +13,6 @@ import {
   Send,
   User,
 } from "lucide-react";
-
-const navLinks = [
-  { href: "/", label: "Home", icon: Home },
-  { href: "/about", label: "About Me", icon: User },
-  { href: "/resume", label: "Resume", icon: FileText },
-  { href: "/portfolio", label: "Portfolio", icon: Briefcase },
-  { href: "/testimonials", label: "Testimonials", icon: MessageSquare },
-  { href: "/contact", label: "Contact", icon: Mail },
-];
 
 const railIcons = [Home, User, Briefcase, MessageSquare, Megaphone, Send];
 
@@ -64,38 +55,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <section className="about-template" aria-labelledby="about-title">
-      <aside className="about-template-sidebar" aria-label="About navigation">
-        <div className="about-template-profile">
-          <div className="about-template-photo">
-            <Image
-              src="/images/profile-photo.jpeg"
-              alt="Precious Pukulu profile"
-              fill
-              sizes="500px"
-              className="about-template-image"
-              priority
-            />
-          </div>
-        </div>
-
-        <nav className="about-template-nav">
-          {navLinks.map((link) => {
-            const Icon = link.icon;
-            const isActive = link.href === "/about";
-
-            return (
-              <Link
-                href={link.href}
-                className={`about-template-link ${isActive ? "is-active" : ""}`}
-                key={link.href}
-              >
-                <Icon size={15} aria-hidden />
-                <span>{link.label}</span>
-              </Link>
-            );
-          })}
-        </nav>
-      </aside>
+      <Sidebar />
 
       <div className="about-stage">
         <div className="about-heading-row">
