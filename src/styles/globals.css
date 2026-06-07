@@ -761,8 +761,10 @@ textarea {
 }
 
 .resume-template-image {
-  object-fit: contain;
-  object-position: 50% 50%;
+  object-fit: cover;
+  object-position: 49% 22%;
+  transform: scale(1.72) rotate(1.2deg);
+  transform-origin: 49% 28%;
 }
 
 .resume-template-nav {
@@ -1058,11 +1060,12 @@ textarea {
 }
 
 .portfolio-template-image {
-  display: block;
+  object-fit: cover;
+  object-position: 49% 22%;
+  transform: scale(1.72) rotate(1.2deg);
+  transform-origin: 49% 28%;
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  object-position: 50% 50%;
 }
 
 .portfolio-template-nav {
@@ -1168,23 +1171,39 @@ textarea {
   margin: 0 0 26px 82px;
 }
 
-.portfolio-filters span {
+.portfolio-filters button {
   display: inline-flex;
-  min-height: 24px;
+  min-height: 40px;
+  padding: 0 18px;
   align-items: center;
   justify-content: center;
   border-radius: 999px;
-  padding: 0 13px;
+  border: none;
+  background: transparent;
   color: #050505;
   font-size: 0.74rem;
   font-weight: 1000;
   line-height: 1;
   text-transform: uppercase;
+  cursor: pointer;
+  transition: background 150ms ease, color 150ms ease;
+}
+
+.portfolio-filters button:hover {
+  background: rgba(255, 217, 71, 0.14);
 }
 
 .portfolio-filters .is-active {
   background: var(--gold);
   color: var(--white);
+}
+
+.portfolio-filter-description {
+  margin: 8px 0 24px 82px;
+  color: #505050;
+  font-size: 0.84rem;
+  line-height: 1.6;
+  max-width: 680px;
 }
 
 .portfolio-grid {
