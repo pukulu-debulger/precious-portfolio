@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import Sidebar from "../../components/Sidebar";
 import { useState } from "react";
 import {
   Briefcase,
@@ -14,18 +14,16 @@ import {
   User,
 } from "lucide-react";
 
-const navLinks = [
-  { href: "/", label: "Home", icon: Home },
-  { href: "/about", label: "About Me", icon: User },
-  { href: "/resume", label: "Resume", icon: FileText },
-  { href: "/portfolio", label: "Portfolio", icon: Briefcase },
-  { href: "/testimonials", label: "Testimonials", icon: MessageSquare },
-  { href: "/contact", label: "Contact", icon: Mail },
-];
-
 const railIcons = [Home, User, Briefcase, MessageSquare, Megaphone, Send];
 
 const filters = ["All", "Teaching", "Graphic Designing", "Web Design"];
+
+const filterDescriptions: Record<string, string> = {
+  All: "Showing a mix of teaching, graphic design, and web design work.",
+  Teaching: "Teaching resources, classroom projects, and student-focused learning work.",
+  "Graphic Designing": "Showing some of my graphic design work: posters, flyers, branding, and visual campaigns.",
+  "Web Design": "Web design work: responsive websites, interface design, and digital experiences.",
+};
 
 const projects = [
   {
@@ -66,38 +64,7 @@ export default function PortfolioClient() {
 
   return (
     <section className="portfolio-template" aria-labelledby="portfolio-title">
-      <aside className="portfolio-template-sidebar" aria-label="Portfolio navigation">
-        <div className="portfolio-template-profile">
-          <div className="portfolio-template-photo">
-            <Image
-              src="/images/profile-photo.jpeg"
-              alt="Precious Pukulu profile"
-              width={172}
-              height={172}
-              className="portfolio-template-image"
-              priority
-            />
-          </div>
-        </div>
-
-        <nav className="portfolio-template-nav">
-          {navLinks.map((link) => {
-            const Icon = link.icon;
-            const isActive = link.href === "/portfolio";
-
-            return (
-              <Link
-                href={link.href}
-                className={`portfolio-template-link ${isActive ? "is-active" : ""}`}
-                key={link.href}
-              >
-                <Icon size={15} aria-hidden />
-                <span>{link.label}</span>
-              </Link>
-            );
-          })}
-        </nav>
-      </aside>
+      <Sidebar />
 
       <div className="portfolio-stage">
         <div className="portfolio-heading-row">
@@ -120,6 +87,12 @@ export default function PortfolioClient() {
             </button>
           ))}
         </div>
+
+        {activeFilter === "Graphic Designing" ? (
+          <p className="portfolio-filter-description">
+            {filterDescriptions[activeFilter]}
+          </p>
+        ) : null}
 
         <div className="portfolio-grid">
           {filteredProjects.map((project) => (
